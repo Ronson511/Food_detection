@@ -1,0 +1,5 @@
+yolov3_customModel3.data* filter=lfs diff=lfs merge=lfs -text
+*.h5 filter=lfs diff=lfs merge=lfs -text
+yolov3.weights filter=lfs diff=lfs merge=lfs -text
+train2017.txt filter=lfs diff=lfs merge=lfs -text
+mars-small128.pb filter=lfs diff=lfs merge=lfs -text

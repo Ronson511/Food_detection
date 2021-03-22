@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <meta charset="utf-8">
+    <title>問卷調查</title>
+    <style>
+        body {
+           background-color: lightyellow;
+        }
+        em {
+            color: LightSeaGreen;
+        }
+    </style>
+<script>
+"use strict";
+var ctime_tag
+
+function updateTime() {
+    var now = new Date();
+    ctime_tag.innerHTML = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+    setTimeout(updateTime, 1000);
+}
+function myInit() {
+    ctime_tag = document.getElementById('current_time')
+    setTimeout(updateTime, 1000);
+}
+
+document.addEventListener('DOMContentLoaded', myInit, false);
+</script>
+</head>
+<body>
+    <h1 id='current_time'></h1>
+    <form>
+        <h1>歡迎來到食破天斤</h1>
+        <!-- 單行文字方塊 -->
+        姓  名：<input type="text" name="Username" size="30" value="Who are you ?"><br>
+        E-Mail：<input type="text" name="UserMail" size="30" value="Username@mailserver"><br>
+        <p>
+        <!-- 選擇鈕 -->
+        1.請問您的性別是？ 
+        <input type="radio" name="Userage1" value="男性">男性
+        <input type="radio" name="Userage1" value="女性">女性</p>
+        <p>
+        2.請問您的身高是?
+        <input type="radio" name="Userage2" value="age3">140～150cm
+        <input type="radio" name="Userage2" value="age4">151～160cm
+        <input type="radio" name="Userage2" value="age5">161～170cm
+        <input type="radio" name="Userage2" value="age6">171～180cm
+        <input type="radio" name="Userage2" value="age7">181～190cm
+        <input type="radio" name="Userage2" value="age8">191cm以上 </p>
+        <p>
+        3.請問您的體重是？
+        <input type="radio" name="Userage" value="age9">40～45kg
+        <input type="radio" name="Userage" value="age10">46～50kg
+        <input type="radio" name="Userage" value="age11">51～55kg
+        <input type="radio" name="Userage" value="age12">56～60kg
+        <input type="radio" name="Userage" value="age13">61～65kg
+        <input type="radio" name="Userage" value="age14">66kg以上 </p>
+        <p>
+        4.請問您的目標是？
+        <input type="radio" name="Userage" value="age15"><span style="color:rgb(0, 225, 255);">減重</span>
+        <input type="radio" name="Userage" value="age16">維持
+        <input type="radio" name="Userage" value="age17"><span style="color:red;">增重</span></p>
+        <p>
+        5.請問您的年齡是？
+        <input type="radio" name="Userage" value="age18">0～18歲
+        <input type="radio" name="Userage" value="age19">19～25歲
+        <input type="radio" name="Userage" value="age20">26～35歲
+        <input type="radio" name="Userage" value="age21">36～45歲
+        <input type="radio" name="Userage" value="age22">46～55歲
+        <input type="radio" name="Userage" value="age23">56歲以上</p>
+        <p>
+        6.請問您的工作類型是？<br>
+        <input type="radio" name="Userage" value="age24">輕度工作【例如：家庭主婦、坐辦公室的上班族、售貨員等】<br>
+        <input type="radio" name="Userage" value="age25">中度工作【例如：保母、護士、服務生等】<br>
+        <input type="radio" name="Userage" value="age26">重度工作【例如：運動員、搬家工人等】</p>
+        <p>
+        7.您在家一般會如何解決吃飯問題？
+        <input type="radio" name="Userage" value="age27">外送
+        <input type="radio" name="Userage" value="age28">做飯
+        <input type="radio" name="Userage" value="age29">出去吃</p>
+        <p>
+        8.您喜歡做的菜係是哪類？
+        <input type="radio" name="Userage" value="age30">中式
+        <input type="radio" name="Userage" value="age31">西式
+        <input type="radio" name="Userage" value="age32">日韓
+        <input type="radio" name="Userage" value="age33">烘培點心
+        <input type="radio" name="Userage" value="age34">其它</p>
+        <p>
+        9.您有哪些廚房電器？
+        <input type="radio" name="Userage" value="微波爐">微波爐
+        <input type="radio" name="Userage" value="烤箱">烤箱
+        <input type="radio" name="Userage" value="電鍋">電鍋
+        <input type="radio" name="Userage" value="炒鍋">炒鍋
+        <input type="radio" name="Userage" value="無">無</p>
+        <p>
+        10.您喜愛的烹飪時間是多少？
+        <input type="radio" name="Userage" value="age40">1～10分鐘
+        <input type="radio" name="Userage" value="age41">11～15分鐘
+        <input type="radio" name="Userage" value="age42">16～20分鐘
+        <input type="radio" name="Userage" value="age43">21～30分鐘
+        <input type="radio" name="Userage" value="age44">30分鐘以上</p>
+        <p>
+        <!-- 核取方塊 -->
+        您對哪類食物過敏？【複選】<br>
+        <input type="checkbox" name="Useproduct1" value="age45" checked>麩質類穀物（如小麥、大麥、燕麥等）及其製品<br>
+        <input type="checkbox" name="Useproduct2" value="age46">魚類及其製品<br>
+        <input type="checkbox" name="Useproduct3" value="age47">蛋類及其製品<br>
+        <input type="checkbox" name="Useproduct4" value="age48">奶類及其製品<br>
+        <input type="checkbox" name="Useproduct5" value="age49">堅果及其製品<br>
+        <input type="checkbox" name="Useproduct6" value="age50">大豆及其製品<br>
+        <input type="checkbox" name="Useproduct7" value="age51">甲殼類動物（如蝦、蟹等）及其製品<br>
+        </p>
+        <p>
+        <!-- 提交與重新輸入按鈕 -->
+        <input type="submit" value="提交">
+        <input type="reset" value="重新輸入">
+        </p>
+    </form>
+
+</body>
+</html>

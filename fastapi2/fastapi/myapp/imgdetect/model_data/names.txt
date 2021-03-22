@@ -1,0 +1,9 @@
+salmon
+egg
+sweetPotato
+cabbage
+chicken
+tomato
+brocoli
+beef
+mackerel

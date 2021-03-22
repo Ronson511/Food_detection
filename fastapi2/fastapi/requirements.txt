@@ -1,0 +1,8 @@
+requests
+line-bot-sdk
+aiolinebot
+aiofiles
+opencv-python-headless
+tensorflow
+SQLAlchemy
+PyMySQL

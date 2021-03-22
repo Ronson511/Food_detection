@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <title>問卷調查</title>
+  <link rel="stylesheet" href="./css/stylesheet.css">
+  <script src="./js/jquery-3.6.0.min.js"></script>
+  <script src="./js/formToJson.min.js"></script>
+  <script src="./js/index.js"></script>
+</head>
+<body>
+  <h1>歡迎來到食破天斤<span id="current_time"></span></h1>
+  <form id="myForm" method="POST" action="#">
+    <div>
+    <span class="qHeadR">姓&nbsp;&nbsp;&nbsp;&nbsp;名：</span>
+      <span class="qBody" style="display:inline-block"><input type="text" name="username" size="30" placeholder="Who are you ?"></span>
+    </div><div>
+    <span class="qHeadR">E-Mail：</span>
+    <span class="qBody" style="display:inline-block"><input type="text" name="email" size="30" placeholder="Username@mailserver"></span>
+    </div><div>
+    <span class="qHeadL">1.請問您的性別是？</span>
+    <span class="qBody">
+      <span class='nowrap'><input type="radio" name="gender" value="男性" id="fld01-01"><label for="fld01-01">男性</label></span>
+      <span class='nowrap'><input type="radio" name="gender" value="女性" id="fld01-02"><label for="fld01-02">女性</label></span>
+      <span class='nowrap'><input type="radio" name="gender" value="其他" id="fld01-03"><label for="fld01-03">其他</label></span>
+    </span>
+    </div><div>
+    <span class="qHeadL">2.請問您的身高是？</span>
+    <span class="qBody">
+      <span class='nowrap'><input type="radio" name="height" value="150" id="fld02-01"><label for="fld02-01">140～150cm</label></span>
+      <span class='nowrap'><input type="radio" name="height" value="160" id="fld02-02"><label for="fld02-02">151～160cm</label></span>
+      <span class='nowrap'><input type="radio" name="height" value="170" id="fld02-03"><label for="fld02-03">161～170cm</label></span>
+      <span class='nowrap'><input type="radio" name="height" value="180" id="fld02-04"><label for="fld02-04">171～180cm</label></span>
+      <span class='nowrap'><input type="radio" name="height" value="190" id="fld02-05"><label for="fld02-05">181～190cm</label></span>
+      <span class='nowrap'><input type="radio" name="height" value="191以上" id="fld02-06"><label for="fld02-06">191cm以上</label></span>
+    </span>
+    </div><div>
+    <span class="qHeadL">3.請問您的體重是？</span>
+    <span class="qBody">
+      <span class='nowrap'><input type="radio" name="weight" value="45" id="fld03-01"><label for="fld03-01">40～45kg</label></span>
+      <span class='nowrap'><input type="radio" name="weight" value="50" id="fld03-02"><label for="fld03-02">46～50kg</label></span>
+      <span class='nowrap'><input type="radio" name="weight" value="55" id="fld03-03"><label for="fld03-03">51～55kg</label></span>
+      <span class='nowrap'><input type="radio" name="weight" value="60" id="fld03-04"><label for="fld03-04">56～60kg</label></span>
+      <span class='nowrap'><input type="radio" name="weight" value="65" id="fld03-05"><label for="fld03-05">61～65kg</label></span>
+      <span class='nowrap'><input type="radio" name="weight" value="66以上" id="fld03-06"><label for="fld03-06">66kg以上 </label></span>
+    </div><div>
+    <span class="qHeadL">4.請問您的目標是？</span>
+    <span class="qBody">
+      <span class='nowrap'><input type="radio" name="target" value="減重" id="fld04-01"><label for="fld04-01"><span style="color:rgb(0, 225, 255);">減重</span></label></span>
+      <span class='nowrap'><input type="radio" name="target" value="維持" id="fld04-02"><label for="fld04-02">維持</label></span>
+      <span class='nowrap'><input type="radio" name="target" value="增重" id="fld04-03"><label for="fld04-03"><span style="color:red;">增重</span></label></span>
+    </div><div>
+    <span class="qHeadL">5.請問您的年齡是？</span>
+    <span class="qBody">
+      <span class='nowrap'><input type="radio" name="age_range" value="18" id="fld05-01"><label for="fld05-01">0～18歲</label></span>
+      <span class='nowrap'><input type="radio" name="age_range" value="25" id="fld05-02"><label for="fld05-02">19～25歲</label></span>
+      <span class='nowrap'><input type="radio" name="age_range" value="35" id="fld05-03"><label for="fld05-03">26～35歲</label></span>
+      <span class='nowrap'><input type="radio" name="age_range" value="45" id="fld05-04"><label for="fld05-04">36～45歲</label></span>
+      <span class='nowrap'><input type="radio" name="age_range" value="55" id="fld05-05"><label for="fld05-05">46～55歲</label></span>
+      <span class='nowrap'><input type="radio" name="age_range" value="56以上" id="fld05-06"><label for="fld05-06">56歲以上</label></span>
+    </span>
+    </div><div>
+    <span class="qHeadL">6.請問您的工作類型是？<br></span>
+    <span class="qBody" style='padding-left:1.5em; text-indent: -1.5em;'>
+      <p><span class='nowrap'><input type="radio" name="work_type" value="輕度" id="fld06-01"><label for="fld06-01">輕度工作</label></span>【例如：家庭主婦、坐辦公室的上班族、售貨員等】</p>
+      <p><span class='nowrap'><input type="radio" name="work_type" value="中度" id="fld06-02"><label for="fld06-02">中度工作</label></span>【例如：保母、護士、服務生等】</p>
+      <p><span class='nowrap'><input type="radio" name="work_type" value="重度" id="fld06-03"><label for="fld06-03">重度工作</label></span>【例如：運動員、搬家工人等】</p>
+    </span>
+    </div><div>
+    <span class="qHeadL">7.您在家一般會如何解決吃飯問題？</span>
+    <span class="qBody">
+      <span class='nowrap'><input type="radio" name="dining" value="外送" id="fld07-01"><label for="fld07-01">外送</label></span>
+      <span class='nowrap'><input type="radio" name="dining" value="做飯" id="fld07-02"><label for="fld07-02">做飯</label></span>
+      <span class='nowrap'><input type="radio" name="dining" value="出去" id="fld07-03"><label for="fld07-03">出去吃</label></span>
+    </span>
+    </div><div>
+    <span class="qHeadL">8.您喜歡自己動手做的菜係是哪類？</span>
+    <span class="qBody">
+      <span class='nowrap'><input type="checkbox" name="cuisine" value="中式" id="fld08-01"><label for="fld08-01">中式</label></span>
+      <span class='nowrap'><input type="checkbox" name="cuisine" value="西式" id="fld08-02"><label for="fld08-02">西式</label></span>
+      <span class='nowrap'><input type="checkbox" name="cuisine" value="日韓" id="fld08-03"><label for="fld08-03">日韓</label></span>
+      <span class='nowrap'><input type="checkbox" name="cuisine" value="點心" id="fld08-04"><label for="fld08-04">烘培點心</label></span>
+      <span class='nowrap'><input type="checkbox" name="cuisine" value="其他" id="fld08-05"><label for="fld08-05">其它</label></span>
+    </span>
+    </div><div>
+    <span class="qHeadL">9.您有哪些廚房電器？</span>
+    <span class="qBody">
+      <span class='nowrap'><input type="checkbox" name="cook_tool" value="微波爐" id="fld09-01"><label for="fld09-01">微波爐</label></span>
+      <span class='nowrap'><input type="checkbox" name="cook_tool" value="烤箱" id="fld09-02"><label for="fld09-02">烤箱</label></span>
+      <span class='nowrap'><input type="checkbox" name="cook_tool" value="電鍋" id="fld09-03"><label for="fld09-03">電鍋</label></span>
+      <span class='nowrap'><input type="checkbox" name="cook_tool" value="炒鍋" id="fld09-04"><label for="fld09-04">炒鍋</label></span>
+      <!-- <span class='nowrap'><input type="checkbox" name="cook_tool" value="無" id="fld09-05"><label for="fld09-05">無</label></span> -->
+    </span>
+    </div><div>
+    <span class="qHeadL">10.您喜愛的烹飪時間是多少？</span>
+    <span class="qBody">
+      <span class='nowrap'><input type="radio" name="cook_time" value="10" id="fld10-01"><label for="fld10-01">1～10分鐘</label></span>
+      <span class='nowrap'><input type="radio" name="cook_time" value="15" id="fld10-02"><label for="fld10-02">11～15分鐘</label></span>
+      <span class='nowrap'><input type="radio" name="cook_time" value="20" id="fld10-03"><label for="fld10-03">16～20分鐘</label></span>
+      <span class='nowrap'><input type="radio" name="cook_time" value="30" id="fld10-04"><label for="fld10-04">21～30分鐘</label></span>
+      <span class='nowrap'><input type="radio" name="cook_time" value="30以上" id="fld10-05"><label for="fld10-05">30分鐘以上</label></span>
+    </div><div>
+    <span class="qHeadL">11.您對哪類食物過敏？【複選】<br></span>
+    <span class="qBody" style='padding-left:1.5em; text-indent: -1.5em;'>
+      <p><input type="checkbox" name="allergy" value="麩質" id="fld11-01"><label for="fld11-01">麩質類穀物（如小麥、大麥、燕麥等）及其製品</label></p>
+      <p><input type="checkbox" name="allergy" value="魚類" id="fld11-02"><label for="fld11-02">魚類及其製品</label></p>
+      <p><input type="checkbox" name="allergy" value="蛋類" id="fld11-03"><label for="fld11-03">蛋類及其製品</label></p>
+      <p><input type="checkbox" name="allergy" value="奶類" id="fld11-04"><label for="fld11-04">奶類及其製品</label></p>
+      <p><input type="checkbox" name="allergy" value="堅果" id="fld11-05"><label for="fld11-05">堅果及其製品</label></p>
+      <p><input type="checkbox" name="allergy" value="大豆" id="fld11-06"><label for="fld11-06">大豆及其製品</label></p>
+      <p><input type="checkbox" name="allergy" value="甲殼" id="fld11-07"><label for="fld11-07">甲殼類動物（如蝦、蟹等）及其製品</label>
+    </span>
+    </div><div>
+    <span class='button'><input type="button" value="提交" id="myXmit" /></span>
+    <span class='button'><input type="reset" value="重新輸入" /></span>
+    </div>
+  </form>
+</body>
+</html>

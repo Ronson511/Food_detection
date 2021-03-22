@@ -1,0 +1,40 @@
+* { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
+body	{ font-size:16px; font-family:Microsoft JhengHei, Heiti TC, PMingLiU, MingLiU, DFKai-sb, BiauKai, Arial, sans-serif }
+body    { background-color: lightyellow; }
+em      { color: LightSeaGreen; }
+h1      { text-align:center; }
+p       { margin: 0; }
+form    { margin: auto; border:1px solid dimgray; border-radius: 8px; box-shadow: 4px 4px 8px; padding:1em }
+.qHeadR { width: 5em; text-align: right; display:inline-block; font-weight:bold }
+.qHeadL { width:16em; text-align: left;  display: block }
+.qBody  { margin-left: 1em; display: block; margin-bottom: 1em; }
+.nowrap { white-space:nowrap }
+#current_time { margin-left: 1em }
+.button input { font-size: 18px; border:1px solid; border-radius: 4px; font-weight: bold; color:dimgray }
+.button input:hover { cursor: pointer; }
+.button:first-child input { margin-left:4em; margin-right: 1em; }
+
+/* view port > 640px */
+@media only screen
+    and (min-width: 800px) {
+    /* blue */
+	/* body	{ background-color: #B2D6FF; } */
+    form { width: 70%; min-width: 500px; }
+}
+
+/* view port <= 640px (0px ~ 640px) */
+@media only screen
+    and (max-width: 800px) {
+    /* yellow */
+	/* body	{ background-color: #F5CF8E; } */
+    form { width: 80%; min-width: 350px; }
+}
+
+/* view port <= 360px (0 ~ 360px, overwrite the above rule) */
+@media only screen
+    and (max-width: 360px) {
+    /* purple */
+    /* body	{ background-color: #F09DF0; } */
+    form { width: 95%; min-width: 240px; }
+}
+
